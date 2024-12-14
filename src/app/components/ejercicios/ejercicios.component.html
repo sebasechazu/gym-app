@@ -1,0 +1,18 @@
+<div class="container mx-auto mt-10">
+    <h1 class="text-3xl font-bold text-blue-600 mb-4">Lista de Ejercicios</h1>
+    <ul class="space-y-4">
+
+        @for(ejercicio of ejercicios; track ejercicio.nombre){
+            <li class="flex justify-between items-center bg-gray-100 p-4 rounded shadow">
+                <div>
+                    <h2 class="text-xl font-semibold">{{ ejercicio.nombre }}</h2>
+                    <p class="text-gray-600">{{ ejercicio.descripcion }}</p>
+                </div>
+                <button (click)="agregarARutina(ejercicio)"
+                    class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">
+                    Agregar
+                </button>
+            </li>
+        }
+    </ul>
+</div>
